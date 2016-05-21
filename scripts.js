@@ -22,6 +22,6 @@ $(document).ready(function() {
 
 function getData() {
 	$.getJSON(URL, function(data) {
-		console.log(data["main"]["temp"])
+		document.write(data["main"]["temp"])
 	});
 }
