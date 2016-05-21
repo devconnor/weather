@@ -23,5 +23,6 @@ $(document).ready(function() {
 function getData() {
 	$.getJSON(URL, function(data) {
 		document.write(data["main"]["temp"])
+		$(".results").html(data["main"]["temp"])
 	});
 }
