@@ -16,13 +16,18 @@ $(document).ready(function() {
 	})
 
 })
-	
+
+function toFahrenheit(data) {
+	final = data*(9/5) - 459.67;
+	return final;
+
+}
 
 
 
 function getData() {
 	$.getJSON(URL, function(data) {
-		document.write(data["main"]["temp"])
-		$(".results").html(data["main"]["temp"])
+		tempInFah = toFahrenheit(data["main"]["temp"]);
+		$(".results").html(tempInFah);
 	});
 }
