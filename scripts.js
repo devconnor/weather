@@ -20,7 +20,6 @@ $(document).ready(function() {
 function toFahrenheit(data) {
 	final = data*(9/5) - 459.67;
 	return final;
-
 }
 
 
@@ -28,6 +27,8 @@ function toFahrenheit(data) {
 function getData() {
 	$.getJSON(URL, function(data) {
 		tempInFah = toFahrenheit(data["main"]["temp"]);
-		$(".results").html(tempInFah);
+		thing = tempInFah.toString();
+		lst = thing.split(".");
+		$(".results").html(lst[0]);
 	});
 }
